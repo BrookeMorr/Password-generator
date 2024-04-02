@@ -1,0 +1,27 @@
+import random
+
+def PassGen():
+    password = ""
+    
+    for i in range(12):
+        element = randompick()
+        password += element
+
+    return password
+
+def randompick():
+    specialchars = ["!", "@", "#", "&", "*"]
+    chars = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+    nums = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
+
+    random_upperchar = random.choice(chars).upper()
+    random_specialchar = random.choice(specialchars)
+    random_char = random.choice(chars)
+    random_num = random.choice(nums)
+
+    possiblechar =  [random_upperchar, random_specialchar, random_char, random_num]
+
+    return random.choice(possiblechar)
+
+
+print(PassGen())
